@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from '../pages/home';
+import Home from '../pages/cart';
 import Cart from '../pages/cart';
 
 const Tab = createBottomTabNavigator();
