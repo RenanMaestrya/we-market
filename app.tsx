@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from './src/pages/cart';
+import Home from './src/pages/home';
 import Cart from './src/pages/cart';
 
 const Tab: any = createBottomTabNavigator();
