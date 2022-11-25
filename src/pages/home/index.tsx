@@ -35,12 +35,14 @@ export default function Home() {
     const Item = ({data}: {data: ItemData}) => (
         <TouchableOpacity
           style={{
-            backgroundColor: '#eeeeee',
+            backgroundColor: '#fff',
             borderWidth: 1,
             borderRadius: 10,
             padding: 20,
             marginVertical: 8,
             marginHorizontal: 16,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
           }}>
           <Text style={{fontSize: 24}}>{data.name}</Text>
           <Text style={{fontSize: 16}}>{data.price}</Text>
@@ -48,7 +50,7 @@ export default function Home() {
       );
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: '#00004a'}}>
         <FlatList
           data={DATA}
           renderItem={({item}) => <Item data={item} />}
