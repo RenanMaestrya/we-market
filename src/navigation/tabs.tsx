@@ -4,6 +4,7 @@ import Home from '../pages/home';
 import Cart from '../pages/cart';
 
 
+
 const Tab: any = createBottomTabNavigator();
 
 const Tabs: any = () =>{
@@ -20,7 +21,7 @@ const Tabs: any = () =>{
                     backgroundcolor: '#8fcbbc',
                     borderRadius: 15,
                     height: 50,
-                }
+                },
             }}
         >
             <Tab.Screen name="Home" component={Home} />
