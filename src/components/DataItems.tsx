@@ -19,4 +19,14 @@ export const DATA = [
         name: "Beer",
         price: 2.95,
     },
+    {
+        id: '5',
+        name: "Honey",
+        price: 5.60,
+    },
+    {
+        id: '6',
+        name: "Rice",
+        price: 4.90,
+    },
   ]
