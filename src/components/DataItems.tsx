@@ -24,9 +24,4 @@ export const DATA = [
         name: "Honey",
         price: 5.60,
     },
-    {
-        id: '6',
-        name: "Rice",
-        price: 4.90,
-    },
   ]

@@ -1,5 +1,6 @@
 import { StyleSheet, View, Image, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FaSearch } from 'react-icons/fa';
 
 import Home from '../pages/home';
 import Cart from '../pages/cart';
@@ -12,6 +13,7 @@ const Tabs = () =>{
     return(
         <Tab.Navigator 
             screenOptions={{
+                
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     position: 'absolute',
@@ -26,6 +28,14 @@ const Tabs = () =>{
             }}
         >
             <Tab.Screen name="Home" component={Home} options={{
+                title: 'We Market',
+                headerStyle: {
+                  backgroundColor: '#1d73b8',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
                 tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image
@@ -42,6 +52,15 @@ const Tabs = () =>{
                 ),
             }} />
             <Tab.Screen name="Cart" component={Cart} options={{
+                title: 'Cart',
+                headerStyle: {
+                  backgroundColor: '#1d73b8',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+                tabBarBadge: 3,
                 tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image
