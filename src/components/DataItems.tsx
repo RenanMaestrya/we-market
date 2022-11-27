@@ -1,22 +1,22 @@
 export const DATA = [
     {
         id: '1',
-        name: "Macarrão Instantâneo",
+        name: "Lamen",
         price: 1.95,
     },
     {
         id: '2',
-        name: "Sabonete",
+        name: "Soap",
         price: 3,
     },
     {
         id: '3',
-        name: "Picanha",
+        name: "Steak",
         price: 61.90,
     },
     {
         id: '4',
-        name: "Cerveja",
+        name: "Beer",
         price: 2.95,
     },
   ]
