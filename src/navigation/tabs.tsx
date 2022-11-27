@@ -41,7 +41,22 @@ const Tabs = () =>{
                     </View>
                 ),
             }} />
-            <Tab.Screen name="Cart" component={Cart} />
+            <Tab.Screen name="Cart" component={Cart} options={{
+                tabBarIcon:({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                        <Image
+                            source={require('../../assets/icons/cart.png')}
+                            resizeMode='contain'
+                            style={{
+                                width: 25,
+                                height: 25,
+                                tintColor: focused ? '#1d73b8' : '#748c94'
+                            }}
+                        />
+                        <Text style={{color: focused ? '#1d73b8' : '#748c94', fontSize: 12}}>CART</Text>
+                    </View>
+                ),
+            }} />
         </Tab.Navigator>
     )
     
