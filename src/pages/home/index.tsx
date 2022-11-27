@@ -21,7 +21,7 @@ export const Item = ({data}: {data: ItemData}) => (
       justifyContent: 'space-between',
     }}>
     <Text style={{fontSize: 24}}>{data.name}</Text>
-    <Text style={{fontSize: 16}}>{data.price}</Text>
+    <Text style={{fontSize: 16}}>Price: {data.price}</Text>
   </TouchableOpacity>
 );
 
