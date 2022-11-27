@@ -27,7 +27,7 @@ export const Item = ({data}: {data: ItemData}) => (
 
 export default function Home() {
     return (
-      <View style={{flex: 1, backgroundColor: '#00004a'}}>
+      <View style={{flex: 1, backgroundColor: '#2596be'}}>
         <FlatList
           data={DATA}
           renderItem={({item}) => <Item data={item} />}
