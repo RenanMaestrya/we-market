@@ -2,11 +2,7 @@ import React from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import { DATA } from '../../components/DataItems';
 
-export interface ItemData {
-  id: string;
-  name: string;
-  price: number;
-}
+import { ItemData } from '../../components/DataItems';
 
 export const Item = ({data}: {data: ItemData}) => (
   <TouchableOpacity

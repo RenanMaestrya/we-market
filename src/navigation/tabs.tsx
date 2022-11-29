@@ -1,6 +1,5 @@
 import { StyleSheet, View, Image, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FaSearch } from 'react-icons/fa';
 
 import Home from '../pages/home';
 import Cart from '../pages/cart';

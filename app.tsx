@@ -5,16 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 import Tabs from './src/navigation/tabs';
-import { AppContextProvider } from './src/context/provider';
 
 export default function App() {
     return (
-      <AppContextProvider>
         <NavigationContainer>
           <Tabs/>
           <StatusBar style="auto" />
         </NavigationContainer>
-      </AppContextProvider>
     );
   }
 

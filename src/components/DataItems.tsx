@@ -1,3 +1,9 @@
+export interface ItemData {
+    id: string;
+    name: string;
+    price: number;
+  }
+
 export const DATA = [
     {
         id: '1',
