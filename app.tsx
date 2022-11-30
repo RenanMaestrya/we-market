@@ -5,13 +5,16 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 import Tabs from './src/navigation/tabs';
+import { CartProvider } from './src/context/cart';
 
 export default function App() {
     return (
+      <CartProvider>
         <NavigationContainer>
           <Tabs/>
           <StatusBar style="auto" />
         </NavigationContainer>
+      </CartProvider>
     );
   }
 

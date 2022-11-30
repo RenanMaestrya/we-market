@@ -59,7 +59,6 @@ const Tabs = () =>{
                 headerTitleStyle: {
                   fontWeight: 'bold',
                 },
-                tabBarBadge: 3,
                 tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image
