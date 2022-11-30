@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
-import { DATA } from '../../components/DataItems';
+import { useCart } from '../../context/cart';
+
+
 
 export interface ItemData {
   id: string;
@@ -8,8 +10,10 @@ export interface ItemData {
   price: number;
 }
 
-export const Item = ({data}: {data: ItemData}) => (
-  <TouchableOpacity
+export const Item = ({data}: {data: ItemData}) => {
+  
+  return (
+    <TouchableOpacity
     style={{
       backgroundColor: '#fff',
       borderWidth: 1,
@@ -21,15 +25,16 @@ export const Item = ({data}: {data: ItemData}) => (
       justifyContent: 'space-between',
     }}>
     <Text style={{fontSize: 24}}>{data.name}</Text>
-    <Text style={{fontSize: 16}}>${data.price}</Text>
+    <Text style={{fontSize: 16}}>R${data.price}</Text>
   </TouchableOpacity>
-);
+)};
 
-export default function Home() {
-    return (
+export default function Cart() {
+  const { add, cart } = useCart() 
+  return (
       <View style={{flex: 1, backgroundColor: '#2596be'}}>
         <FlatList
-          data={DATA}
+          data={cart}
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
         />

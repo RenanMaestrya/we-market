@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
-import { DATA } from '../../components/DataItems';
+import { DATA, ItemData } from '../../components/DataItems';
+import { useCart } from '../../context/cart';
 
-import { ItemData } from '../../components/DataItems';
 
-export const Item = ({data}: {data: ItemData}) => (
-  <TouchableOpacity
+export const Item = ({data}: {data: ItemData}) => {
+  const { add } = useCart()
+
+  return (
+  <TouchableOpacity onPress={() => add(data)}
     style={{
       backgroundColor: '#fff',
       borderWidth: 1,
@@ -17,9 +20,9 @@ export const Item = ({data}: {data: ItemData}) => (
       justifyContent: 'space-between',
     }}>
     <Text style={{fontSize: 24}}>{data.name}</Text>
-    <Text style={{fontSize: 16}}>${data.price}</Text>
+    <Text style={{fontSize: 16}}>R${data.price}</Text>
   </TouchableOpacity>
-);
+)};
 
 export default function Home() {
     return (

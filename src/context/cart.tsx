@@ -18,11 +18,18 @@ export function CartProvider({ children }: CartProps) {
     const [cart, setCart] = useState([])
     const [totalValue, setTotalValue] = useState()
 
+    useEffect(() => {
+        const value = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+        setTotalValue(value)
+
+    }, [cart])
+
     function add (item: ItemData){
         const newCart = cart
         newCart.push(item)
 
-        setCart(newCart)
+        setCart([...newCart])
     }
 
     const store: CartContextProps = {
