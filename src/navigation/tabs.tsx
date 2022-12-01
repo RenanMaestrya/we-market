@@ -4,11 +4,16 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../pages/home';
 import Cart from '../pages/cart';
 
-
+import { useCart } from '../context/cart';
 
 const Tab = createBottomTabNavigator();
 
+
+
 const Tabs = () =>{
+    const { cart } = useCart()
+    let lengthCart = Object.keys(cart).length // QUANTIDADE DE OBJETOS ADICIONADOS AO CARRINHO
+
     return(
         <Tab.Navigator 
             screenOptions={{
@@ -26,7 +31,7 @@ const Tabs = () =>{
                 },
             }}
         >
-            <Tab.Screen name="Home" component={Home} options={{
+            <Tab.Screen name="Home" component={Home} options={{   /* <<<<<PAGE HOME>>>>>  */
                 title: 'We Market',
                 headerStyle: {
                   backgroundColor: '#1d73b8',
@@ -50,7 +55,8 @@ const Tabs = () =>{
                     </View>
                 ),
             }} />
-            <Tab.Screen name="Cart" component={Cart} options={{
+            <Tab.Screen name="Cart" component={Cart} options={{  /* <<<<<PAGE CART>>>>>  */
+                tabBarBadge: lengthCart,
                 title: 'Cart',
                 headerStyle: {
                   backgroundColor: '#1d73b8',
@@ -59,7 +65,7 @@ const Tabs = () =>{
                 headerTitleStyle: {
                   fontWeight: 'bold',
                 },
-                tabBarIcon:({focused}) => (
+                tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image
                             source={require('../../assets/icons/cart.png')}
@@ -78,6 +84,8 @@ const Tabs = () =>{
     )
     
 }
+
+
 
 const styles = StyleSheet.create({
     shadow:{

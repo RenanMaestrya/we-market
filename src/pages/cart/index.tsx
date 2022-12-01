@@ -3,7 +3,6 @@ import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import { useCart } from '../../context/cart';
 
 
-
 export interface ItemData {
   id: string;
   name: string;
@@ -30,7 +29,7 @@ export const Item = ({data}: {data: ItemData}) => {
 )};
 
 export default function Cart() {
-  const { add, cart } = useCart() 
+  const { cart, totalValue } = useCart() 
   return (
       <View style={{flex: 1, backgroundColor: '#2596be'}}>
         <FlatList
@@ -38,6 +37,7 @@ export default function Cart() {
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
         />
+        {/* <Text>Total: {totalValue}</Text> */}
       </View>
     );
   }
