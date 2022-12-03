@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { useCart } from '../../context/cart';
 
 
@@ -37,7 +37,17 @@ export default function Cart() {
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
         />
-        {/* <Text>Total: {totalValue}</Text> */}
+        <Text style={styles.totalValue}>Total: {totalValue}</Text>
       </View>
     );
   }
+
+const styles = StyleSheet.create({
+    totalValue:{
+      flex: 1,
+      backgroundColor: '#fff',
+      borderWidth: 1,
+      borderRadius: 5,
+      padding: 5,
+    }
+})
