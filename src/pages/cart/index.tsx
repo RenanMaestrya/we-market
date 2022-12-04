@@ -37,7 +37,7 @@ export default function Cart() {
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
         />
-        <Text style={styles.totalValue}>Total: {totalValue}</Text>
+        <Text style={styles.totalValue}>Total no Carrinho: {totalValue}</Text>
       </View>
     );
   }
@@ -49,5 +49,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 5,
       padding: 5,
+      borderColor: '#1d73b8'
     }
 })
