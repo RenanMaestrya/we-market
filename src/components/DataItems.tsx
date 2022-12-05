@@ -7,27 +7,27 @@ export interface ItemData {
 export const DATA = [
     {
         id: '1',
-        name: "Lamen",
+        name: "Macarrão",
         price: 1.95,
     },
     {
         id: '2',
-        name: "Soap",
+        name: "Bolacha",
         price: 3,
     },
     {
         id: '3',
-        name: "Steak",
+        name: "Carne",
         price: 61.90,
     },
     {
         id: '4',
-        name: "Beer",
+        name: "Cerveja",
         price: 2.95,
     },
     {
         id: '5',
-        name: "Honey",
+        name: "Mel",
         price: 5.60,
     },
   ]
