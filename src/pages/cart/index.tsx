@@ -44,6 +44,7 @@ export default function Cart() {
 
 const styles = StyleSheet.create({
     totalValue:{
+      fontSize: 26,
       flex: 1,
       backgroundColor: '#fff',
       borderWidth: 1,

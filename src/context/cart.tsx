@@ -16,7 +16,8 @@ export const CartContext = createContext({} as CartContextProps )
 
 export function CartProvider({ children }: CartProps) {
     const [cart, setCart] = useState([])
-    const [totalValue, setTotalValue] = useState()
+    const [count, setCount] = useState(0)
+    const [totalValue, setTotalValue] = useState(0)
 
     useEffect(() => {
         const value = cart.reduce((acc, curr) => acc + curr.price, 0);
@@ -27,9 +28,12 @@ export function CartProvider({ children }: CartProps) {
 
     function add (item: ItemData){
         const newCart = cart
-        newCart.push(item)
-
-        setCart([...newCart])
+        if (!(newCart.includes(item))) {
+            newCart.push(item);
+            setCart([...newCart]);
+         } else {
+            console.log('me ajuda!!!')
+        }
     }
 
     const store: CartContextProps = {
