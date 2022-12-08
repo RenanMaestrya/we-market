@@ -7,12 +7,14 @@ export interface ItemData {
   id: string;
   name: string;
   price: number;
+  count: number;
 }
 
 export const Item = ({data}: {data: ItemData}) => {
+  const { remove } = useCart()
   
   return (
-    <TouchableOpacity
+    <TouchableOpacity onPress={() => remove(data)}
     style={{
       backgroundColor: '#fff',
       borderWidth: 1,
@@ -23,7 +25,7 @@ export const Item = ({data}: {data: ItemData}) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
     }}>
-    <Text style={{fontSize: 24}}>{data.name}</Text>
+    <Text style={{fontSize: 24}}>{data.name} {data.count}x </Text>
     <Text style={{fontSize: 16}}>R${data.price}</Text>
   </TouchableOpacity>
 )};
@@ -37,7 +39,7 @@ export default function Cart() {
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
         />
-        <Text style={styles.totalValue}>Total no Carrinho: {totalValue}</Text>
+        <Text style={styles.totalValue}>Total no Carrinho: R${totalValue.toFixed(2)}</Text>
       </View>
     );
   }
@@ -49,7 +51,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       borderWidth: 1,
       borderRadius: 5,
-      padding: 5,
-      borderColor: '#1d73b8'
+      padding: 25,
+      height: 50,
+      borderColor: '#1d73b8',
     }
 })

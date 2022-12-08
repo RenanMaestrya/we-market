@@ -1,4 +1,5 @@
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { useState, useEffect } from 'react';
+import { StyleSheet, View, Image, Text,  } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../pages/home';
@@ -11,13 +12,12 @@ const Tab = createBottomTabNavigator();
 
 
 const Tabs = () =>{
-    const { cart } = useCart()
-    let lengthCart = Object.keys(cart).length // QUANTIDADE DE OBJETOS ADICIONADOS AO CARRINHO
+    const { totalItems } = useCart()
 
     return(
         <Tab.Navigator 
             screenOptions={{
-                
+                headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     position: 'absolute',
@@ -56,8 +56,7 @@ const Tabs = () =>{
                 ),
             }} />
             <Tab.Screen name="Cart" component={Cart} options={{  /* <<<<<PAGE CART>>>>>  */
-                tabBarBadge: lengthCart,
-                title: 'Cart',
+                tabBarBadge: totalItems,
                 headerStyle: {
                   backgroundColor: '#1d73b8',
                 },
