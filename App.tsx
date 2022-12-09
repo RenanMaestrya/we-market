@@ -6,6 +6,11 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Tabs from './src/navigation/tabs';
 import { CartProvider } from './src/context/cart';
+import { 
+  useFonts, 
+  Montserrat_400Regular, 
+  Montserrat_700Bold 
+} from '@expo-google-fonts/montserrat';
 
 export default function App() {
     return (

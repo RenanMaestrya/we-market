@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, FlatList, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { useCart } from '../../context/cart';
+import { Header } from '../../components/Header';
 
 
 export interface ItemData {
@@ -34,6 +35,7 @@ export default function Cart() {
   const { cart, totalValue } = useCart() 
   return (
       <View style={{flex: 1, backgroundColor: '#2596be'}}>
+        <Header title='Cart'/>
         <FlatList
           data={cart}
           renderItem={({item}) => <Item data={item} />}
@@ -46,13 +48,10 @@ export default function Cart() {
 
 const styles = StyleSheet.create({
     totalValue:{
-      fontSize: 26,
-      flex: 1,
+      fontSize: 16,
       backgroundColor: '#fff',
-      borderWidth: 1,
-      borderRadius: 5,
       padding: 25,
-      height: 50,
-      borderColor: '#1d73b8',
+      height: 70,
+      bottom: 80,
     }
 })

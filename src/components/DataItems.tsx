@@ -1,3 +1,4 @@
+
 export interface ItemData {
     id: string;
     name: string;
@@ -7,6 +8,7 @@ export interface ItemData {
 
 export const DATA = [
     {
+        
         id: '1',
         name: "Macarrão",
         price: 1.95,
@@ -14,26 +16,26 @@ export const DATA = [
     },
     {
         id: '2',
-        name: "Bolacha",
-        price: 3,
+        name: "Mingau",
+        price: 1.90,
         count: 1,
     },
     {
         id: '3',
-        name: "Carne",
-        price: 61.90,
+        name: "Ovos",
+        price: 11.90,
         count: 1,
     },
     {
         id: '4',
-        name: "Cerveja",
+        name: "Pepino",
         price: 2.95,
         count: 1,
     },
     {
         id: '5',
-        name: "Mel",
-        price: 5.60,
+        name: "Leite",
+        price: 3.60,
         count: 1,
     },
   ]

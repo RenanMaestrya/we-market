@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { StyleSheet, View, Image, Text,  } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -32,14 +31,6 @@ const Tabs = () =>{
             }}
         >
             <Tab.Screen name="Home" component={Home} options={{   /* <<<<<PAGE HOME>>>>>  */
-                title: 'We Market',
-                headerStyle: {
-                  backgroundColor: '#1d73b8',
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                  fontWeight: 'bold',
-                },
                 tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image
@@ -57,13 +48,6 @@ const Tabs = () =>{
             }} />
             <Tab.Screen name="Cart" component={Cart} options={{  /* <<<<<PAGE CART>>>>>  */
                 tabBarBadge: totalItems,
-                headerStyle: {
-                  backgroundColor: '#1d73b8',
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                  fontWeight: 'bold',
-                },
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center'}}>
                         <Image

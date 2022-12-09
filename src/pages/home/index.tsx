@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { DATA, ItemData } from '../../components/DataItems';
 import { useCart } from '../../context/cart';
+import { Header } from '../../components/Header';
 
 
 export const Item = ({data}: {data: ItemData}) => {
@@ -27,7 +28,8 @@ export const Item = ({data}: {data: ItemData}) => {
 export default function Home() {
     return (
       <View style={{flex: 1, backgroundColor: '#2596be'}}>
-        <FlatList
+        <Header title='We Market'/>
+        <FlatList style={styles.list}
           data={DATA}
           renderItem={({item}) => <Item data={item} />}
           keyExtractor={(item: ItemData) => item.id}
@@ -35,3 +37,7 @@ export default function Home() {
       </View>
     );
   }
+
+  const styles = StyleSheet.create({
+    list: { marginBottom: 90 }
+})
